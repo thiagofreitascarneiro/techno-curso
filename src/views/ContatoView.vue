@@ -1,9 +1,14 @@
 <template>
-    <div class="home">
-      <h1>Contato</h1>
-      {{api}}
+    <div>
+        <div v-if="loading">
+            <PageLoading/>
+        </div>
+        <div v-if="api">
+            <h1>Contato</h1>
+            <p>{{api}}</p>
+        </div>
     </div>
-  </template>
+</template>
   
   <script>
   // @ is an alias to /src

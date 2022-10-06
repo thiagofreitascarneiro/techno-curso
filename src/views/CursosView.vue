@@ -1,9 +1,15 @@
 <template>
-    <div class="home">
-      <h1>Cursos</h1>
-      {{api}}
+    <div>
+      <div v-if="loading">
+        <PageLoading/>
+      </div>
+      <div v-if="api">
+        <h1>Cursos</h1>
+        {{api}}
+      </div>
+     
     </div>
-  </template>
+</template>
   
   <script>
   // @ is an alias to /src
@@ -15,8 +21,8 @@
     mixins: [fetchData],
     created() {
         this.fetchData("/cursos")
-    }
-   
+    }  
   }
+
   </script>
   
